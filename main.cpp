@@ -15,14 +15,14 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ unsigned int (not sure if this counts, but it was in your video)
+ char
+ bool
+ float
+ double
+ void
+  
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -59,10 +59,30 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    int numPlayers = 10;
+    int pointsPerShot = 3;
+    int employeeCount = 3000;
+
+    char studentGrade = 'B';
+    char randomLetter = 'Z';
+    char smallNumber = '3';
     
+    float averageGPA = 3.23f;
+    float vehicleMPG = 31.5f;
+    float fortyYardDashTime = 4.89f;
+
+    bool coinIsHeads = false;
+    bool testComplete = true;
+    bool failedTest = false;
+
+    double circleArea = 6.2814;
+    double signalCDF = 0.7834;
+    double amplifierGain = 3.7645;
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, numPlayers, pointsPerShot, employeeCount, studentGrade,
+    randomLetter, smallNumber, averageGPA, vehicleMPG, fortyYardDashTime,
+    coinIsHeads, testComplete, failedTest, circleArea, signalCDF, amplifierGain); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -79,43 +99,82 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+float calcCircleArea(float radius = 0.0f)
+{
+    ignoreUnused(radius);
+    return {};
+}
 /*
  2)
  */
-
+void createPerson(int Age, float Height, float Weight, char Gender = 'M')
+{
+    ignoreUnused(Age, Height, Weight, Gender);
+}
 /*
  3)
  */
-
+int generateRandomInt()
+{
+    return {};
+}
 /*
  4)
  */
-
+double calcGPA(float avgTestScore = 0.0f, float testWeight = 0.0f, 
+               float avgHomeworkScore = 0.0f)
+{
+    ignoreUnused(avgTestScore, testWeight, avgHomeworkScore);
+    return {};
+}
 /*
  5)
  */
-
+bool charMatch(char char1, char char2)
+{
+    ignoreUnused(char1, char2);
+    return {};
+}
 /*
  6)
  */
-
+int charToInt(char inputChar)
+{
+    ignoreUnused(inputChar);
+    return {};
+}
 /*
  7)
  */
-
+bool checkForEquality(int num1 = 0, int num2 = 0)
+{
+    ignoreUnused(num1, num2);
+    return {};
+}
 /*
  8)
  */
-
+double calculatePlayerRating(double pointsPerGame, double reboundsPerGame,
+                             double assistsPerGame)
+{
+    ignoreUnused(pointsPerGame, reboundsPerGame, assistsPerGame);
+    return {};
+}
 /*
  9)
  */
-
+void addChar(int number, char numToAdd = '0')
+{
+    ignoreUnused(number, numToAdd);
+}
 /*
  10)
  */
-
+int addOctave(int pitchNum = 60)
+{
+    ignoreUnused(pitchNum);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -136,27 +195,28 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto circleArea = calcCircleArea(2.5f);
     //2)
-    
+    createPerson(35,68.4f, 180.54f);
     //3)
-    
+    auto randInt = generateRandomInt();
     //4)
-    
+    auto studentGPA = calcGPA(88.3f, 0.65f, 94.2f);
     //5)
-    
+    auto matched = charMatch('1', '2');
     //6)
-    
+    auto castChar = charToInt('3');
     //7)
-    
+    auto isEqual = checkForEquality(7,6);
     //8)
-    
+    auto playerRating = calculatePlayerRating(15.6, 5.6, 4.8);
     //9)
-    
+    addChar(16,'6');
     //10)
+    auto newPitch = addOctave(52);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, circleArea, randInt, studentGPA, matched, castChar,
+                isEqual, playerRating, newPitch);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
