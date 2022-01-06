@@ -215,7 +215,8 @@ int main()
     //10)
     auto newPitch = addOctave(52);
     
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, circleArea, randInt, studentGPA, matched, castChar,
+                isEqual, playerRating, newPitch);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
