@@ -201,7 +201,7 @@ int main()
     //3)
     auto randInt = generateRandomInt();
     //4)
-    auto studentGPA = calcGPA(88.3f, 0.65f, 94.2f)
+    auto studentGPA = calcGPA(88.3f, 0.65f, 94.2f);
     //5)
     auto matched = charMatch('1', '2');
     //6)
